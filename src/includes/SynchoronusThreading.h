@@ -3,8 +3,8 @@
 * 2021-2022
 * @author pavl_g.
 */
-#ifndef SYNCHRONUS_THREADING
-#define SYNCHRONUS_THREADING 1
+#ifndef SYNCHORONUS_THREADING
+#define SYNCHORONUS_THREADING 1
 /**
 * Ahead Compilation of codebase(header)
 */

@@ -7,12 +7,12 @@
 #include <cstdlib>
 #include <pthread.h>
 #include <unistd.h>
-#include <SynchronusThreading.h>
+#include <SynchoronusThreading.h>
 using namespace std;
 
 void* mainThreadStatus = NULL;
 
-void runSynchronusExample(){
+void runSynchoronusExample(){
        //sleep 500 m secs
        sleep(5);
        int id1 = '1';
@@ -41,7 +41,7 @@ int main () {
        //the main thread is task0
        cout << "Thread 0" << endl;
        //run the synchronus example
-       runSynchronusExample();
+       runSynchoronusExample();
        //check for the termination & save the status in a void pointer 
        if(pthread_tryjoin_np(pthread_self(), &mainThreadStatus) > 0){
             cout <<  pthread_self() << " (main Thread) has been detached & terminated" << endl;
