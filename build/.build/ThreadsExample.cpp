@@ -4,7 +4,12 @@
 #include <unistd.h>
 
 using namespace std;
-
+/**
+* Ahead Compilation of codebase(header like)
+*/
+extern "C" void *run1(void *);
+extern "C" void *run2(void *);
+extern "C" void *run3(void *);
 /**
 * Run method for thread1
 * @param void* arg the thread passed argument
