@@ -1,17 +1,17 @@
 # CThreads
 
-### Let's dive into CThreads Interface aka `POSIX Threads` which isn't shipped natively with C, it's based on Unix :
+## Let's dive into CThreads Interface aka `POSIX Threads` which isn't shipped natively with C, it's based on Unix :
 https://www.ibm.com/docs/en/zos/2.4.0?topic=files-pthreadh-thread-interfaces
 
-## Resources for POSIX Threads of Unix :
+### Resources for POSIX Threads of Unix :
 https://www.ibm.com/docs/en/i/7.1?topic=ssw_ibm_i_71/apis/concept8.htm
 <br/>
 https://www.geeksforgeeks.org/thread-functions-in-c-c/
 
-## Mutex -- Mutually Exclusive -- Synchronized -- Object :
+### Mutex -- Mutually Exclusive -- Synchronized -- Object :
 https://www.ibm.com/docs/en/zos/2.3.0?topic=functions-pthread-mutex-init-initialize-mutex-object
 
-## struct timespec --used by the Mutex System of `pthread.h` in C method :
+### struct timespec --used by the Mutex System of `pthread.h` in C method :
 ```c
 /* Wait until lock becomes available, or specified time passes. */
 extern int pthread_mutex_timedlock (pthread_mutex_t *__restrict __mutex,
