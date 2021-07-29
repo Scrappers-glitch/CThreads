@@ -20,3 +20,34 @@ extern int pthread_mutex_timedlock (pthread_mutex_t *__restrict __mutex,
 ``` 
 				    
 https://en.cppreference.com/w/c/chrono/timespec
+
+
+# To Build, use shell command/terminal : 
+
+```bash
+┌─[twisted@parrot]─[~/GradleProjects/CThreads/build]
+└──╼ $./compile.sh 
+Compiling the project
+Successfully Compiled
+```
+# To run :
+
+```bash
+┌─[twisted@parrot]─[~/GradleProjects/CThreads/output]
+└──╼ $./ThreadsTest.exec
+Main Thread joined
+Async 2 joined
+139843706689280 Aysnc 2 Terminated
+Thread 1
+Async 1 joined
+139843715081984 Aysnc 1 Terminated
+139843698296576 (Thread 1) has been detached & terminated
+Thread 2
+139843698296576 (Thread 2) has been detached & terminated
+mutex_initialized & property settled to NORMAL single lock mutually events
+mutex object obtained by Event 1 -- Event 1 execution starts
+mutex_locked to this Event 1, concurrent threads will wait until unlock occurs
+mutex object obtained by Event 2 -- Event 2 execution starts
+mutex_locked to this Event 2, concurrent threads will wait until unlock occurs
+```
+
