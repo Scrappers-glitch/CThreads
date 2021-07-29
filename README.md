@@ -51,3 +51,5 @@ mutex object obtained by Event 2 -- Event 2 execution starts
 mutex_locked to this Event 2, concurrent threads will wait until unlock occurs
 ```
 
+### Tips : You can open the code on vscode, use c++ code completion, syntax highlighting.
+
