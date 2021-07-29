@@ -4,12 +4,30 @@
 * @author pavl_g.
 */
 #include <iostream>
-#include <cstdlib>
 #include <pthread.h>
 #include <unistd.h>
 #include <SynchronousThreading.h>
+#include <AsynchronousThreading.h>
 #include <SyncMutex.h>
 using namespace std;
+
+//ahead compilation
+/**
+* Runs an example for 2 Synchronous threads running in series 
+* using join() or wait().
+*/
+extern void runSynchronousExample();
+
+/**
+* Runs an example for 2 Synchronous threads running in series 
+* using mutex object based events.
+*/
+extern void runMutexEventsExample();
+
+/**
+* Runs an example for 2 Asynchronous threads running in parallel.
+*/
+extern void runAsyncThreadsExample();
 
 void* mainThreadStatus = NULL;
 
@@ -49,26 +67,29 @@ void runMutexEventsExample(){
 }
 
 void runAsyncThreadsExample(){
-
-
+       int id1 = 'a';
+       pthread_t* asyncThread1= new pthread_t();
+       //start async 1
+       pthread_create(asyncThread1, NULL, async1, &id1); 
+        
+       int id2 = 'A';
+       pthread_t* asyncThread2= new pthread_t();
+       //start thread 2
+       pthread_create(asyncThread2, NULL, async2, &id2); 
+   return;
 }
+
 /**
 * Run main Thread
 * @return the status of the run
 */
 int main () {
-       //the main thread is task0
-       cout << "Thread 0" << endl;
-       //run the synchronus example
+      //the main thread is task0
+      cout << "Main Thread joined" << endl;
+      //run the examples
+      runAsyncThreadsExample(); 
       runSynchronousExample();
       runMutexEventsExample();
-      //check for the termination & save the status in a void pointer 
-       if(pthread_tryjoin_np(pthread_self(), &mainThreadStatus) > 0){
-            cout <<  pthread_self() << " (main Thread) has been detached & terminated" << endl;
-            //detach the thread -- & release memory
-            pthread_detach(pthread_self());
-            //exit the main thread to register others into the Processors Registers
-            pthread_exit(NULL); 
-       }
+      pthread_exit(NULL);
     return 0;
 }
