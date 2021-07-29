@@ -11,8 +11,7 @@ https://www.ibm.com/docs/en/zos/2.3.0?topic=functions-pthread-mutex-init-initial
 ```c
 /* Wait until lock becomes available, or specified time passes. */
 extern int pthread_mutex_timedlock (pthread_mutex_t *__restrict __mutex,
-				    const struct timespec *__restrict
-				    __abstime);
+				    const struct timespec *__restrict__abstime);
 ``` 
 				    
 https://en.cppreference.com/w/c/chrono/timespec
