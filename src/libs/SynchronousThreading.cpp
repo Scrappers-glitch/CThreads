@@ -7,7 +7,7 @@
 #include <cstdlib>
 #include <pthread.h>
 #include <unistd.h>
-#include <SynchoronusThreading.h>
+#include <SynchronousThreading.h>
 
 using namespace std;
 
