@@ -6,7 +6,7 @@
 #ifndef _SYNC_MUTEX
 #define _SYNC_MUTEX     
 
-/*ahead compilation*/
+//ahead compilation
 extern "C" void* mutexEvent1(void*);
 extern "C" void* mutexEvent2(void*);
 extern "C" void* mutexEvent3(void*);
