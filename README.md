@@ -1,4 +1,8 @@
 # CThreads
+
+### Let's dive into CThreads Interface aka `POSIX Threads` which isn't shipped natively with C, it's based on Unix :
+https://www.ibm.com/docs/en/zos/2.4.0?topic=files-pthreadh-thread-interfaces
+
 ## Resources for POSIX Threads of Unix :
 https://www.ibm.com/docs/en/i/7.1?topic=ssw_ibm_i_71/apis/concept8.htm
 <br/>
