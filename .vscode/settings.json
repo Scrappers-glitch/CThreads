@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "sched.h": "c",
+        "features.h": "c",
+        "time.h": "c",
+        "endian.h": "c",
+        "wordsize.h": "c",
+        "struct_timespec.h": "c"
+    }
+}
