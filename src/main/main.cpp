@@ -8,12 +8,13 @@
 #include <pthread.h>
 #include <unistd.h>
 #include <SynchronousThreading.h>
+#include <SyncMutex.h>
 using namespace std;
 
 void* mainThreadStatus = NULL;
 
 void runSynchronousExample(){
-       //sleep 500 m secs
+       //sleep 5 secs
        sleep(5);
        int id1 = '1';
        //create thread 1
@@ -33,6 +34,24 @@ void runSynchronousExample(){
        pthread_join(*thread2, status2);  
    return;
 }
+
+void runMutexEventsExample(){
+       int id1 = 'm';
+       pthread_t* mutexThread1= new pthread_t();
+       //start thread 1
+       pthread_create(mutexThread1, NULL, mutexEvent1, &id1); 
+        
+       int id2 = 'M';
+       pthread_t* mutexThread2= new pthread_t();
+       //start thread 2
+       pthread_create(mutexThread2, NULL, mutexEvent2, &id2); 
+   return;
+}
+
+void runAsyncThreadsExample(){
+
+
+}
 /**
 * Run main Thread
 * @return the status of the run
@@ -41,8 +60,9 @@ int main () {
        //the main thread is task0
        cout << "Thread 0" << endl;
        //run the synchronus example
-       runSynchronousExample();
-       //check for the termination & save the status in a void pointer 
+      runSynchronousExample();
+      runMutexEventsExample();
+      //check for the termination & save the status in a void pointer 
        if(pthread_tryjoin_np(pthread_self(), &mainThreadStatus) > 0){
             cout <<  pthread_self() << " (main Thread) has been detached & terminated" << endl;
             //detach the thread -- & release memory
